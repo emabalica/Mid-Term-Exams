@@ -1,0 +1,6 @@
+D:\facultate\an3\inet\Proiect\Proiect\DataLayer\bin\Debug\netcoreapp2.1\DataLayer.deps.json
+D:\facultate\an3\inet\Proiect\Proiect\DataLayer\bin\Debug\netcoreapp2.1\DataLayer.dll
+D:\facultate\an3\inet\Proiect\Proiect\DataLayer\obj\Debug\netcoreapp2.1\DataLayer.csprojAssemblyReference.cache
+D:\facultate\an3\inet\Proiect\Proiect\DataLayer\obj\Debug\netcoreapp2.1\DataLayer.csproj.CoreCompileInputs.cache
+D:\facultate\an3\inet\Proiect\Proiect\DataLayer\obj\Debug\netcoreapp2.1\DataLayer.AssemblyInfoInputs.cache
+D:\facultate\an3\inet\Proiect\Proiect\DataLayer\obj\Debug\netcoreapp2.1\DataLayer.AssemblyInfo.cs

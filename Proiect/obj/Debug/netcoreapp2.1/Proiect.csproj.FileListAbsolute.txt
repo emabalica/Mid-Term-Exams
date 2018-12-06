@@ -1,0 +1,11 @@
+D:\facultate\an3\inet\Proiect\Proiect\Proiect\bin\Debug\netcoreapp2.1\Proiect.deps.json
+D:\facultate\an3\inet\Proiect\Proiect\Proiect\bin\Debug\netcoreapp2.1\Proiect.runtimeconfig.json
+D:\facultate\an3\inet\Proiect\Proiect\Proiect\bin\Debug\netcoreapp2.1\Proiect.runtimeconfig.dev.json
+D:\facultate\an3\inet\Proiect\Proiect\Proiect\bin\Debug\netcoreapp2.1\Proiect.dll
+D:\facultate\an3\inet\Proiect\Proiect\Proiect\obj\Debug\netcoreapp2.1\Proiect.csprojAssemblyReference.cache
+D:\facultate\an3\inet\Proiect\Proiect\Proiect\obj\Debug\netcoreapp2.1\Proiect.csproj.CoreCompileInputs.cache
+D:\facultate\an3\inet\Proiect\Proiect\Proiect\obj\Debug\netcoreapp2.1\Proiect.RazorAssemblyInfo.cache
+D:\facultate\an3\inet\Proiect\Proiect\Proiect\obj\Debug\netcoreapp2.1\Proiect.RazorAssemblyInfo.cs
+D:\facultate\an3\inet\Proiect\Proiect\Proiect\obj\Debug\netcoreapp2.1\Proiect.AssemblyInfoInputs.cache
+D:\facultate\an3\inet\Proiect\Proiect\Proiect\obj\Debug\netcoreapp2.1\Proiect.AssemblyInfo.cs
+D:\facultate\an3\inet\Proiect\Proiect\Proiect\obj\Debug\netcoreapp2.1\Proiect.RazorTargetAssemblyInfo.cache
