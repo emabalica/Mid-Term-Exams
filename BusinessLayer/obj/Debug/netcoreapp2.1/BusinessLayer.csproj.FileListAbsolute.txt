@@ -4,3 +4,8 @@ D:\facultate\an3\inet\Proiect\Proiect\BusinessLayer\obj\Debug\netcoreapp2.1\Busi
 D:\facultate\an3\inet\Proiect\Proiect\BusinessLayer\obj\Debug\netcoreapp2.1\BusinessLayer.AssemblyInfoInputs.cache
 D:\facultate\an3\inet\Proiect\Proiect\BusinessLayer\obj\Debug\netcoreapp2.1\BusinessLayer.AssemblyInfo.cs
 D:\facultate\an3\inet\Proiect\Proiect\BusinessLayer\obj\Debug\netcoreapp2.1\BusinessLayer.csprojAssemblyReference.cache
+C:\Scoala\DotNet\Proiect\Mid-Term-Exams\BusinessLayer\bin\Debug\netcoreapp2.1\DataLayer.dll
+C:\Scoala\DotNet\Proiect\Mid-Term-Exams\BusinessLayer\obj\Debug\netcoreapp2.1\BusinessLayer.csprojAssemblyReference.cache
+C:\Scoala\DotNet\Proiect\Mid-Term-Exams\BusinessLayer\obj\Debug\netcoreapp2.1\BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Scoala\DotNet\Proiect\Mid-Term-Exams\BusinessLayer\obj\Debug\netcoreapp2.1\BusinessLayer.AssemblyInfoInputs.cache
+C:\Scoala\DotNet\Proiect\Mid-Term-Exams\BusinessLayer\obj\Debug\netcoreapp2.1\BusinessLayer.AssemblyInfo.cs

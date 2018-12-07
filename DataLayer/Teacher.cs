@@ -1,20 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Text;
 
 namespace DataLayer
 {
-    public class User
+    public class Teacher
     {
-        public User(string firstName, string lastName, string registrationNumber, string userName, string password, List<Grade> grades)
+        public Teacher(string firstName, string lastName, string userName, string password, List<Subject> subjects)
         {
             FirstName = firstName;
             LastName = lastName;
-            RegistrationNumber = registrationNumber;
             UserName = userName;
             Password = password;
-            Grades = grades;
+            Subjects = subjects;
         }
 
         [Key]
@@ -28,18 +26,14 @@ namespace DataLayer
         [StringLength(50, MinimumLength = 5)]
         public string LastName { get; private set; }
 
-        [Required]
-        [StringLength(10)]
-        public string RegistrationNumber { get; private set; }
-
         public string UserName { get; private set; }
 
         [Required]
         [StringLength(10, MinimumLength = 5)]
         public string Password { get; private set; }
 
-        public List<Grade> Grades { get; set; }
+        public List<Subject> Subjects { get; set; }
 
-
+       
     }
 }

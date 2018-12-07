@@ -37,6 +37,11 @@ namespace Proiect
 
             
             services.AddDbContext<UsersContext>(options => options.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=Users;Trusted_Connection=True;"));
+            services.AddDbContext<TeachersContext>(options => options.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=Teachers;Trusted_Connection=True;"));
+            services.AddDbContext<ExamsContext>(options => options.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=Exams;Trusted_Connection=True;"));
+            services.AddDbContext<GradesContext>(options => options.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=Grades;Trusted_Connection=True;"));
+            services.AddDbContext<SubjectsContext>(options => options.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=Subjects;Trusted_Connection=True;"));
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
