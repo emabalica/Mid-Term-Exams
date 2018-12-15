@@ -36,7 +36,7 @@ namespace ManagementOfExams
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddSingleton(Configuration);
-            services.AddScoped<IRepository, TeacherRepository>();
+            services.AddScoped<IRepository<Teacher>, TeacherRepository>();
             services.AddDbContext<ManagementContext>(options => options.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=ExamManagement;Trusted_Connection=True;"));
             
         }

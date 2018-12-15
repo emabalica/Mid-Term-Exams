@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ManagementOfExams.Data;
+using ManagementOfExams.Repos;
 
 namespace ManagementOfExams.Controllers
 {
@@ -149,5 +150,8 @@ namespace ManagementOfExams.Controllers
         {
             return _context.Teachers.Any(e => e.Id == id);
         }
+
+        private readonly IRepository<Teacher> _repository;
+
     }
 }

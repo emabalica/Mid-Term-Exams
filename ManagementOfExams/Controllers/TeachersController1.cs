@@ -14,7 +14,7 @@ namespace ManagementOfExams.Controllers
 
     public class TeachersController1 : Controller
     {
-        private IRepository _context;
+        private IRepository<Teacher> _context;
 
         public TeachersController1(TeacherRepository context)
         {

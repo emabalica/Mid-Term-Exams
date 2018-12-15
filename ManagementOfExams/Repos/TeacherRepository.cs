@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Query.Internal;
 
 namespace ManagementOfExams.Repos
 {
-    public class TeacherRepository : IRepository
+    public class TeacherRepository : IRepository<Teacher>
     {
         private readonly ManagementContext _context;
 

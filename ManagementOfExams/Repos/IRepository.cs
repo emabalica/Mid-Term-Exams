@@ -6,13 +6,15 @@ using ManagementOfExams.Data;
 
 namespace ManagementOfExams.Repos
 {
-    interface IRepository
+    public interface IRepository<T> where T : class
     {
-        void Create(Teacher teacher);
+        void Create(T entity);
         void Delete(Guid id);
-        List<Teacher> GetAll();
-        Teacher GetById(Guid id);
-        void Update(Teacher teacher);
+        List<T> GetAll();
+
+
+        T GetById(Guid id);
+        void Update(T entity);
         void Save();
     }
 }
