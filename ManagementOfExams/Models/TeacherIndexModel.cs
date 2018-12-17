@@ -7,6 +7,6 @@ namespace ManagementOfExams.Models
 {
     public class TeacherIndexModel
     {
-        public IEnumerable<TeacherIndexListingModel> Teachers { set; get; }
+        public IEnumerable<TeacherModel> Teachers { set; get; }
     }
 }
