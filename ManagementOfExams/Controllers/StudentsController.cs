@@ -6,92 +6,89 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ManagementOfExams.Data;
-using ManagementOfExams.Repos;
 using ManagementOfExams.Models;
+using ManagementOfExams.Repos;
 
 namespace ManagementOfExams.Controllers
 {
-    public class TeachersController : Controller
+    public class StudentsController : Controller
     {
         private readonly IRepository _context;
 
-        public TeachersController(IRepository context)
+        public StudentsController(IRepository context)
         {
             _context = context;
         }
 
-        // GET: Teachers
+        // GET: Students
         public async Task<IActionResult> Index()
         {
-            return View(await _context.GetAll<Teacher>());
-        }
+            return View(await _context.GetAll<Student>());
+        } 
 
-
-        // GET: Teachers/Details/5
+        // GET: Students/Details/5
         public async Task<IActionResult> Details(Guid id)
         {
-            var teacher = await _context.GetById<Teacher>(id);
-
-            if (teacher == null)
+            var student = await _context.GetById<Student>(id);
+            if (student == null)
             {
                 return NotFound();
             }
 
-            return View(teacher);
+            return View(student);
         }
 
-        // GET: Teachers/Create
+        // GET: Students/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Teachers/Create
+        // POST: Students/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,FirstName,LastName,UserName,Password,EmailAddress")] TeacherModel teacherModel)
+        public async Task<IActionResult> Create([Bind("Id,FirstName,LastName,UserName,Password,EmailAddress")] StudentModel studentModel)
         {
             if (ModelState.IsValid)
             {
-                var teacher = new Teacher
+                var student = new Student
                 {
                     Id = Guid.NewGuid(),
-                    FirstName = teacherModel.FirstName,
-                    LastName = teacherModel.LastName,
-                    UserName = teacherModel.UserName,
-                    EmailAddress = teacherModel.EmailAddress,
-                    Password =  teacherModel.Password
+                    FirstName = studentModel.FirstName,
+                    LastName = studentModel.LastName,
+                    UserName = studentModel.UserName,
+                    EmailAddress = studentModel.EmailAddress,
+                    Password = studentModel.Password
 
                 };
-                _context.Create(teacher);
+                _context.Create(student);
                 _context.Save();
                 return RedirectToAction(nameof(Index));
             }
-            return View(teacherModel);
+            return View(studentModel);
         }
 
-        // GET: Teachers/Edit/5
+        // GET: Students/Edit/5
         public async Task<IActionResult> Edit(Guid id)
         {
-
-            var teacher = await _context.GetById<Teacher>(id);
-            if (teacher == null)
+            var student = await _context.GetById<Student>(id);
+            if (student == null)
             {
                 return NotFound();
             }
-            return View(teacher);
+            return View(student);
         }
 
-        // POST: Teachers/Edit/5
+        // POST: Students/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid id, [Bind("Id,FirstName,LastName,UserName,Password,EmailAddress")] Teacher teacher)
+        public async Task<IActionResult> Edit(Guid id, [Bind("Id,FirstName,LastName,UserName,Password,EmailAddress")] Student student)
         {
-            if (id != teacher.Id)
+            if (id != student.Id)
             {
                 return NotFound();
             }
@@ -100,12 +97,12 @@ namespace ManagementOfExams.Controllers
             {
                 try
                 {
-                    _context.Update(teacher);
+                    _context.Update(student);
                     _context.Save();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (! (await TeacherExists(teacher.Id)))
+                    if (!(await StudentExists(student.Id)))
                     {
                         return NotFound();
                     }
@@ -116,10 +113,10 @@ namespace ManagementOfExams.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(teacher);
+            return View(student);
         }
 
-        // GET: Teachers/Delete/5
+        // GET: Students/Delete/5
         public async Task<IActionResult> Delete(Guid id)
         {
             if (id == null)
@@ -127,31 +124,32 @@ namespace ManagementOfExams.Controllers
                 return NotFound();
             }
 
-            var teacher = await _context.GetById<Teacher>(id);
+            var student = await _context.GetById<Student>(id);
 
-            if (teacher == null)
+            if (student == null)
             {
                 return NotFound();
             }
 
-            return View(teacher);
+            return View(student);
         }
 
-        // POST: Teachers/Delete/5
+        // POST: Students/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(Guid id)
         {
-            var teacher = await _context.GetById<Teacher>(id);
-            _context.Delete(teacher);
+
+            var student = await _context.GetById<Student>(id);
+            _context.Delete(student);
             _context.Save();
             return RedirectToAction(nameof(Index));
         }
 
-        private async Task<bool> TeacherExists(Guid id)
+        private async Task<bool> StudentExists(Guid id)
         {
-            var teacher = await _context.GetById<Teacher>(id);
-            if (teacher == null)
+            var student = await _context.GetById<Student>(id);
+            if (student == null)
             {
                 return false;
             }

@@ -6,16 +6,16 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ManagementOfExams.Data;
-using ManagementOfExams.Repos;
 using ManagementOfExams.Models;
+using ManagementOfExams.Repos;
 
 namespace ManagementOfExams.Controllers
 {
-    public class TeachersController : Controller
+    public class DetailsController : Controller
     {
         private readonly IRepository _context;
 
-        public TeachersController(IRepository context)
+        public DetailsController(IRepository context)
         {
             _context = context;
         }
@@ -23,21 +23,21 @@ namespace ManagementOfExams.Controllers
         // GET: Teachers
         public async Task<IActionResult> Index()
         {
-            return View(await _context.GetAll<Teacher>());
+            return View(await _context.GetAll<Detail>());
         }
 
 
         // GET: Teachers/Details/5
         public async Task<IActionResult> Details(Guid id)
         {
-            var teacher = await _context.GetById<Teacher>(id);
+            var detail = await _context.GetById<Detail>(id);
 
-            if (teacher == null)
+            if (detail == null)
             {
                 return NotFound();
             }
 
-            return View(teacher);
+            return View(detail);
         }
 
         // GET: Teachers/Create
@@ -51,37 +51,38 @@ namespace ManagementOfExams.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,FirstName,LastName,UserName,Password,EmailAddress")] TeacherModel teacherModel)
+        public async Task<IActionResult> Create([Bind("Id,CheckIn,CheckOut,FeedbackMessage,NoOfPages,Rating")] DetailModel detailModel)
         {
             if (ModelState.IsValid)
             {
-                var teacher = new Teacher
+                var detail = new Detail
                 {
                     Id = Guid.NewGuid(),
-                    FirstName = teacherModel.FirstName,
-                    LastName = teacherModel.LastName,
-                    UserName = teacherModel.UserName,
-                    EmailAddress = teacherModel.EmailAddress,
-                    Password =  teacherModel.Password
-
+                    CheckIn = detailModel.CheckIn,
+                    CheckOut = detailModel.CheckOut,
+                    FeedbackMessage = detailModel.FeedbackMessage,
+                    NoOfPages = detailModel.NoOfPages,
+                    Rating = detailModel.Rating
                 };
-                _context.Create(teacher);
+                _context.Create(detail);
                 _context.Save();
                 return RedirectToAction(nameof(Index));
             }
-            return View(teacherModel);
+
+            return View(detailModel);
         }
 
         // GET: Teachers/Edit/5
         public async Task<IActionResult> Edit(Guid id)
         {
 
-            var teacher = await _context.GetById<Teacher>(id);
-            if (teacher == null)
+            var detail = await _context.GetById<Detail>(id);
+            if (detail == null)
             {
                 return NotFound();
             }
-            return View(teacher);
+
+            return View(detail);
         }
 
         // POST: Teachers/Edit/5
@@ -89,9 +90,9 @@ namespace ManagementOfExams.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid id, [Bind("Id,FirstName,LastName,UserName,Password,EmailAddress")] Teacher teacher)
+        public async Task<IActionResult> Edit(Guid id, [Bind("Id,CheckIn,CheckOut,FeedbackMessage,NoOfPages,Rating")] Detail detail)
         {
-            if (id != teacher.Id)
+            if (id != detail.Id)
             {
                 return NotFound();
             }
@@ -100,12 +101,12 @@ namespace ManagementOfExams.Controllers
             {
                 try
                 {
-                    _context.Update(teacher);
+                    _context.Update(detail);
                     _context.Save();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (! (await TeacherExists(teacher.Id)))
+                    if (!(await TeacherExists(detail.Id)))
                     {
                         return NotFound();
                     }
@@ -114,9 +115,11 @@ namespace ManagementOfExams.Controllers
                         throw;
                     }
                 }
+
                 return RedirectToAction(nameof(Index));
             }
-            return View(teacher);
+
+            return View(detail);
         }
 
         // GET: Teachers/Delete/5
@@ -127,14 +130,14 @@ namespace ManagementOfExams.Controllers
                 return NotFound();
             }
 
-            var teacher = await _context.GetById<Teacher>(id);
+            var detail = await _context.GetById<Detail>(id);
 
-            if (teacher == null)
+            if (detail == null)
             {
                 return NotFound();
             }
 
-            return View(teacher);
+            return View(detail);
         }
 
         // POST: Teachers/Delete/5
@@ -142,16 +145,16 @@ namespace ManagementOfExams.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(Guid id)
         {
-            var teacher = await _context.GetById<Teacher>(id);
-            _context.Delete(teacher);
+            var detail = await _context.GetById<Detail>(id);
+            _context.Delete(detail);
             _context.Save();
             return RedirectToAction(nameof(Index));
         }
 
         private async Task<bool> TeacherExists(Guid id)
         {
-            var teacher = await _context.GetById<Teacher>(id);
-            if (teacher == null)
+            var detail = await _context.GetById<Detail>(id);
+            if (detail == null)
             {
                 return false;
             }
