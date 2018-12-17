@@ -7,8 +7,13 @@ using Vanguard;
 
 namespace ManagementOfExams.Data
 {
-    public class Subject
+    public class Subject : BaseEntity
     {
+        public Subject()
+        {
+            
+        }
+
         public Subject(string title, int noOfCredits)
         {
             Id = Guid.NewGuid();
@@ -18,22 +23,18 @@ namespace ManagementOfExams.Data
             NoOfCredits = noOfCredits;
         }
 
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid Id { get; private set; }
-
         [Required]
         [StringLength(50, MinimumLength = 5)]
-        public string Title { get; private set; }
+        public string Title { get;  set; }
 
         [Required]
-        [Range(0,1)]
-        public int NoOfCredits { get; private set; }
+        [Range(0,10)]
+        public int NoOfCredits { get;  set; }
         
         public ICollection<Teacher> Teachers { get; private set; }
 
-        [ForeignKey("Exam")]
-        public Guid ExamId { get; private set; }
+        //[ForeignKey("Exam")]
+        //public Guid ExamId { get; private set; }
 
         public Exam Exam{ get; private set; }
     }

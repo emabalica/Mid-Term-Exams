@@ -6,8 +6,13 @@ using Vanguard;
 
 namespace ManagementOfExams.Data
 {
-    public class Detail
+    public class Detail : BaseEntity
     {
+        public Detail()
+        {
+            //
+        }
+
         public Detail(DateTime checkIn, DateTime checkOut, string feedbackMessage, int noOfPages, int rating)
         {
             Id = new Guid();
@@ -23,33 +28,31 @@ namespace ManagementOfExams.Data
             Rating = rating;
         }
 
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid Id { get; private set; }
+
 
         [Required]
-        public DateTime CheckIn { get; private set; }
+        public DateTime CheckIn { get; set; }
 
         [Required]
-        public DateTime CheckOut { get; private set; }
+        public DateTime CheckOut { get; set; }
 
         [Required]
         [MaxLength(200)]
-        public string FeedbackMessage { get; private set; }
+        public string FeedbackMessage { get; set; }
 
         [Required]
-        [Range(0, 2)]
-        public int NoOfPages { get; private set; }
+        [Range(0, 50)]
+        public int NoOfPages { get; set; }
 
         [Required]
-        [Range(0, 1)]
-        public int Rating { get; private set; }
+        [Range(0, 10)]
+        public int Rating { get; set; }
 
         //foreign keys
-        public Student Student { get; private set; }
+        public Student Student { get; set; }
 
-        [ForeignKey("Exam")]
-        public Guid ExamId { get; private set; }
+        //[ForeignKey("Exam")]
+        //public Guid ExamId { get; private set; }
 
         public Exam Exam { get; private set; }
     }

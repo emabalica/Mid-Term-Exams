@@ -7,8 +7,13 @@ using Vanguard;
 
 namespace ManagementOfExams.Data
 {
-    public class Grade
+    public class Grade : BaseEntity
     {
+        public Grade()
+        {
+            
+        }
+
         public Grade(int value, DateTime date)
         {
             Id = Guid.NewGuid();
@@ -18,18 +23,14 @@ namespace ManagementOfExams.Data
             Date = date;
         }
 
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid Id { get; private set; }
+        [Required]
+        public int Value { get; set; }
 
         [Required]
-        public int Value { get; private set; }
+        public DateTime Date { get; set; }
 
-        [Required]
-        public DateTime Date { get; private set; }
-
-        [ForeignKey("Exam")]
-        public Guid ExamId { get; private set; }
+        //[ForeignKey("Exam")]
+        //public Guid ExamId { get; private set; }
 
         public Exam Exam { get; private set; }
 

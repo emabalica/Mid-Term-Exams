@@ -16,7 +16,7 @@ namespace ManagementOfExams.Data
         public DbSet<Grade> Grades { get; set; }
         public DbSet<Student> Students { get; set; }
         public DbSet<Detail> Details { get; set; }
-        public DbSet<ManagementOfExams.Models.TeacherIndexListingModel> TeacherIndexListingModel { get; set; }
+        //public DbSet<ManagementOfExams.Models.TeacherIndexListingModel> TeacherIndexListingModel { get; set; }
     }
 
 }

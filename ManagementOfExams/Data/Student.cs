@@ -6,8 +6,13 @@ using Vanguard;
 
 namespace ManagementOfExams.Data
 {
-    public class Student
+    public class Student : BaseEntity
     {
+        public Student()
+        {
+            
+        }
+
         public Student(string firstName, string lastName, string userName, string password, string emailAddress)
         {
             Id = Guid.NewGuid();
@@ -23,31 +28,27 @@ namespace ManagementOfExams.Data
             EmailAddress = emailAddress;
         }
 
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid Id { get; private set; }
+        [Required]
+        [StringLength(50, MinimumLength = 5)]
+        public string FirstName { get; set; }
 
         [Required]
         [StringLength(50, MinimumLength = 5)]
-        public string FirstName { get; private set; }
+        public string LastName { get; set; }
 
         [Required]
         [StringLength(50, MinimumLength = 5)]
-        public string LastName { get; private set; }
-
-        [Required]
-        [StringLength(50, MinimumLength = 5)]
-        public string UserName { get; private set; }
+        public string UserName { get; set; }
 
         [Required]
         [StringLength(10, MinimumLength = 5)]
-        public string Password { get; private set; }
+        public string Password { get; set; }
 
         [Required]
         [StringLength(60, MinimumLength = 5)]
-        public string EmailAddress { get; private set; }
+        public string EmailAddress { get; set; }
 
-        public ICollection<Exam> Exams { get; private set; }
+        public ICollection<Exam> Exams { get; set; }
 
         //[InverseProperty("StudentId")]
         public ICollection<Grade> Grades { get; private set; }

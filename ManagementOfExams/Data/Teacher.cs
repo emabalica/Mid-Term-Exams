@@ -5,7 +5,7 @@ using Vanguard;
 
 namespace ManagementOfExams.Data
 {
-    public class Teacher
+    public class Teacher : BaseEntity
     {
         public Teacher()
         {
@@ -26,10 +26,6 @@ namespace ManagementOfExams.Data
             Password = password;
             EmailAddress = emailAddress;
         }
-
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid Id { get;   set; }
 
         [Required]
         [StringLength(50, MinimumLength = 5)]

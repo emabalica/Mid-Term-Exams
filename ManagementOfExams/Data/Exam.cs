@@ -7,8 +7,13 @@ using Vanguard;
 
 namespace ManagementOfExams.Data
 {
-    public class Exam
+    public class Exam : BaseEntity
     {
+        public Exam()
+        {
+            
+        }
+
         public Exam(string title, string observations, DateTime dateStart, DateTime dateEnd)
         {
             Id = Guid.NewGuid();
@@ -22,21 +27,17 @@ namespace ManagementOfExams.Data
             DateEnd = dateEnd;
         }
 
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid Id { get; private set; }
-
         [StringLength(50, MinimumLength = 5)]
-        public string Title { get; private set; }
+        public string Title { get; set; }
 
         [MaxLength(100)]
-        public string Observations { get; private set; }
+        public string Observations { get; set; }
 
         [Required]
-        public DateTime DateStart { get; private set; }
+        public DateTime DateStart { get; set; }
 
         [Required]
-        public DateTime DateEnd { get; private set; }
+        public DateTime DateEnd { get; set; }
 
 
         public ICollection<Subject> Subjects { get; private set; }
@@ -45,8 +46,8 @@ namespace ManagementOfExams.Data
 
         public ICollection<Detail> Detail { get; private set; }
 
-        [ForeignKey("Student")]
-        public Guid StudentId { get; private set; }
+        //[ForeignKey("Student")]
+        //public Guid StudentId { get; private set; }
 
         public Student Student { get; private set; }
 
