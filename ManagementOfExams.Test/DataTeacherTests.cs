@@ -5,7 +5,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace ManagementOfExams.Test
 {
     [TestClass]
-    public class DataTests
+    public class DataTeacherTests
     {
         [TestMethod]
         public void TestTeacher_With_Consturctor()
@@ -16,9 +16,7 @@ namespace ManagementOfExams.Test
             string userName = "TestU";
             string password = "TestP";
             string emailAdress = "TestE";
-
-
-
+            
             //Act
             Teacher teacher = new Teacher(firstName, lastName, userName, password, emailAdress);
 
@@ -39,9 +37,7 @@ namespace ManagementOfExams.Test
             string userName = "TestU";
             string password = "TestP";
             string emailAdress = "TestE";
-
-
-
+            
             //Act
             Teacher teacher = new Teacher();
 
