@@ -20,6 +20,11 @@ namespace ManagementOfExams.Controllers
             _context = context;
         }
 
+        public IActionResult Profile()
+        {
+            return View();
+        }
+        
         // GET: Students
         public async Task<IActionResult> Index()
         {
