@@ -1,0 +1,109 @@
+﻿@model ManagementOfExams.Data.Student
+
+@{
+    ViewData["Title"] = "Profile";
+}
+<style>
+    #StudentInfo {
+        position: relative;
+        left: 20%;
+        top: 30%;
+        border: 1px solid #ccc;
+        padding: 10px 10px;
+        width: 700px;
+        height: 200px;
+        font-size: 16px;
+        margin: 30px;
+        font-family: Verdana;
+    }
+    #Grades {
+        position: relative;
+        left: 20%;
+        top: 30%;
+        border: 1px solid #ccc;
+        padding: 10px 10px;
+        width: 700px;
+        height: 200px;
+        font-size: 16px;
+        margin:30px;
+        font-family:Verdana;
+    }
+    #Grades td{
+        width:25%;
+    }
+    tr {
+        height: 33px;
+    }
+
+    td,th {
+        text-align: center;
+        width: 150px;
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-bottom: 3px;
+        padding-top: 3px;
+        height:60px;
+    }
+    #Left{
+        background-color:black;
+        color:white;
+    }
+    button {
+        background-color: #333333;
+        border-bottom:hidden;
+        border-width: 0.5px;
+        height: 40px;
+        color:white;
+    }
+        button:hover {
+            background-color: #33ccff;
+        }
+</style>
+<h2 style="position:relative; left:50%;">Profile</h2>
+
+
+<table id="StudentInfo">
+    <tr>
+        <th id="Left">@Html.DisplayNameFor(model => model.FirstName)</th>
+        <td>@Html.DisplayFor(model => model.FirstName)</td>
+    </tr>
+    <tr>
+        <th id="Left">@Html.DisplayNameFor(model => model.LastName)</th>
+        <td>@Html.DisplayFor(model => model.LastName)</td>
+    </tr>
+    <tr>
+        <th id="Left">@Html.DisplayNameFor(model => model.EmailAddress)</th>
+        <td> @Html.DisplayFor(model => model.EmailAddress) </td>
+    </tr>
+</table>
+
+<table id="Grades">
+    <tr>
+        <th style=" text-align:center; font-size:20px;" colspan="4" id="Left">Exam participation</th>
+
+    </tr>
+    <tr>
+        <th>Exam</th>
+        <th>Grade</th>
+        <th>Date</th>
+        <th>Feedback</th>
+    </tr>
+    <tr>
+        <td>Logica</td>
+        <td>7</td>
+        <td>27 Ianuarie 2018</td>
+        <td><button>Give feedback</button></td>
+    </tr>
+    <tr>
+        <td>Retele de calculatoare</td>
+        <td>10</td>
+        <td>22 Ianuarie 2018</td>
+        <td><button>Give feedback</button></td>
+    </tr>
+    <tr>
+        <td>Python</td>
+        <td>10</td>
+        <td>20 Ianuarie 2018</td>
+        <td><button>Give feedback</button></td>
+    </tr>
+</table>
