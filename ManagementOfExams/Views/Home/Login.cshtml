@@ -1,0 +1,75 @@
+﻿@model ManagementOfExams.Data.Student
+@{
+    ViewData["Title"] = "Login";
+}
+<style>
+    #login-div {
+        position: absolute;
+        left: 35%;
+        top: 30%;
+        border: 1px solid #ccc;
+        padding: 10px 10px;
+        width:400px;
+        height:200px;
+        font-size:16px;
+    }
+    tr{
+        height:33px;
+    }
+    td {
+        text-align:center;
+        width:150px;
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-bottom:3px;
+        padding-top:3px;
+    }
+</style>
+<h2>Login</h2>
+<div id="login-div">
+    @using (Html.BeginForm(FormMethod.Post))
+    {
+    <table>
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.EmailAddress)
+            </td>
+            <td>
+                @Html.EditorFor(model => model.EmailAddress)
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                @Html.ValidationMessageFor(model => model.EmailAddress)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.Password)
+            </td>
+            <td>
+                @Html.EditorFor(model => model.Password)
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                @Html.ValidationMessageFor(model => model.Password)
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit" name="name" value="Login" />
+                <input type="reset" name="name" value="Clear" />
+            </td>
+        </tr>
+    </table>
+    }
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.js"></script>
