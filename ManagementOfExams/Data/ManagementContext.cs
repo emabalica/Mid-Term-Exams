@@ -3,11 +3,16 @@ using ManagementOfExams.Models;
 
 namespace ManagementOfExams.Data
 {
-    public sealed class ManagementContext : DbContext
+    public class ManagementContext : DbContext
     {
         public ManagementContext(DbContextOptions<ManagementContext> options) : base(options)
         {
             //Database.EnsureCreated();
+        }
+
+        public ManagementContext()
+        {
+
         }
 
         public DbSet<Subject> Subjects { get; set; }

@@ -1,7 +1,5 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Vanguard;
 
 namespace ManagementOfExams.Data
@@ -27,7 +25,6 @@ namespace ManagementOfExams.Data
             NoOfPages = noOfPages;
             Rating = rating;
         }
-
 
 
         [Required]
