@@ -25,7 +25,10 @@ namespace ManagementOfExams.Controllers
         {
             return View(await _context.GetAll<Teacher>());
         }
-
+        public IActionResult Profile()
+        {
+            return View();
+        }
 
         // GET: Teachers/Details/5
         public async Task<IActionResult> Details(Guid id)
