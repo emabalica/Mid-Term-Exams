@@ -20,9 +20,25 @@ namespace ManagementOfExams.Controllers
             _context = context;
         }
 
-        public IActionResult Profile()
+        public async Task<IActionResult> Profile( Guid id)
         {
-            return View();
+            ViewModel profile = new ViewModel();
+            var studentData= await _context.GetById<Student>(id);
+            var studentGrades = await _context.GetById<Grade>(id);
+            var studentSubjects = await _context.GetById<Subject>(id);
+            try {
+                profile.student.FirstName = studentData.FirstName;
+                profile.student.LastName = studentData.LastName;
+                profile.student.EmailAddress = studentData.EmailAddress;
+                profile.subject.Title = studentSubjects.Title;
+
+            }
+            catch(Exception E)
+            {
+
+            }
+            
+            return View(profile);
         }
         
         // GET: Students
