@@ -1,5 +1,5 @@
-﻿@model ManagementOfExams.Data.Student
 
+@model ManagementOfExams.Models.ViewModel
 @{
     ViewData["Title"] = "Profile";
 }
@@ -16,6 +16,7 @@
         margin: 30px;
         font-family: Verdana;
     }
+
     #Grades {
         position: relative;
         left: 20%;
@@ -25,36 +26,41 @@
         width: 700px;
         height: 200px;
         font-size: 16px;
-        margin:30px;
-        font-family:Verdana;
+        margin: 30px;
+        font-family: Verdana;
     }
-    #Grades td{
-        width:25%;
-    }
+
+        #Grades td {
+            width: 25%;
+        }
+
     tr {
         height: 33px;
     }
 
-    td,th {
+    td, th {
         text-align: center;
         width: 150px;
         padding-left: 5px;
         padding-right: 5px;
         padding-bottom: 3px;
         padding-top: 3px;
-        height:60px;
+        height: 60px;
     }
-    #Left{
-        background-color:black;
-        color:white;
+
+    #Left {
+        background-color: black;
+        color: white;
     }
+
     button {
         background-color: #333333;
-        border-bottom:hidden;
+        border-bottom: hidden;
         border-width: 0.5px;
         height: 40px;
-        color:white;
+        color: white;
     }
+
         button:hover {
             background-color: #33ccff;
         }
@@ -64,16 +70,16 @@
 
 <table id="StudentInfo">
     <tr>
-        <th id="Left">@Html.DisplayNameFor(model => model.FirstName)</th>
-        <td>@Html.DisplayFor(model => model.FirstName)</td>
+        <th id="Left">@Html.DisplayNameFor(model => model.student.FirstName)</th>
+        <td>@Html.DisplayFor(model => model.student.FirstName)</td>
     </tr>
     <tr>
-        <th id="Left">@Html.DisplayNameFor(model => model.LastName)</th>
-        <td>@Html.DisplayFor(model => model.LastName)</td>
+        <th id="Left">@Html.DisplayNameFor(model => model.student.LastName)</th>
+        <td>@Html.DisplayFor(model => model.student.LastName)</td>
     </tr>
     <tr>
-        <th id="Left">@Html.DisplayNameFor(model => model.EmailAddress)</th>
-        <td> @Html.DisplayFor(model => model.EmailAddress) </td>
+        <th id="Left">@Html.DisplayNameFor(model => model.student.EmailAddress)</th>
+        <td> @Html.DisplayFor(model => model.student.EmailAddress) </td>
     </tr>
 </table>
 
@@ -89,21 +95,21 @@
         <th>Feedback</th>
     </tr>
     <tr>
-        <td>Logica</td>
-        <td>7</td>
-        <td>27 Ianuarie 2018</td>
+        <td>@Html.DisplayFor(model => model.subject.Title)</td>
+        <td>@Html.DisplayFor(model => model.grades.Value)</td>
+        <td>@Html.DisplayFor(model => model.exams.DateStart)</td>
         <td><button>Give feedback</button></td>
     </tr>
     <tr>
-        <td>Retele de calculatoare</td>
-        <td>10</td>
-        <td>22 Ianuarie 2018</td>
+        <td>@Html.DisplayFor(model => model.subject.Title)</td>
+        <td>@Html.DisplayFor(model => model.grades.Value)</td>
+        <td>@Html.DisplayFor(model => model.exams.DateStart)</td>
         <td><button>Give feedback</button></td>
     </tr>
     <tr>
-        <td>Python</td>
-        <td>10</td>
-        <td>20 Ianuarie 2018</td>
+        <td>@Html.DisplayFor(model => model.subject.Title)</td>
+        <td>@Html.DisplayFor(model => model.grades.Value)</td>
+        <td>@Html.DisplayFor(model => model.exams.DateStart)</td>
         <td><button>Give feedback</button></td>
     </tr>
 </table>
