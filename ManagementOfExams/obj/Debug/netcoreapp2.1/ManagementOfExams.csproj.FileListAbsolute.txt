@@ -162,3 +162,6 @@ C:\Scoala\DotNet\Proiect\Mid-Term-Exams\ManagementOfExams\obj\Debug\netcoreapp2.
 C:\Scoala\DotNet\Proiect\Mid-Term-Exams\ManagementOfExams\obj\Debug\netcoreapp2.1\Razor\Views\Subjects\Details.g.cshtml.cs
 C:\Scoala\DotNet\Proiect\Mid-Term-Exams\ManagementOfExams\obj\Debug\netcoreapp2.1\Razor\Views\Subjects\Edit.g.cshtml.cs
 C:\Scoala\DotNet\Proiect\Mid-Term-Exams\ManagementOfExams\obj\Debug\netcoreapp2.1\Razor\Views\Subjects\Index.g.cshtml.cs
+D:\facultate\an3\inet\NET-Project\Mid-Term-Exams\ManagementOfExams\obj\Debug\netcoreapp2.1\Razor\Views\Home\Login.g.cshtml.cs
+D:\facultate\an3\inet\NET-Project\Mid-Term-Exams\ManagementOfExams\obj\Debug\netcoreapp2.1\Razor\Views\Students\Profile.g.cshtml.cs
+D:\facultate\an3\inet\NET-Project\Mid-Term-Exams\ManagementOfExams\obj\Debug\netcoreapp2.1\Razor\Views\Teachers\Profile.g.cshtml.cs

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Vanguard;
@@ -25,6 +26,8 @@ namespace ManagementOfExams.Data
             UserName = userName;
             Password = password;
             EmailAddress = emailAddress;
+
+            Exams = new List<Exam>();
         }
 
         [Required]
@@ -51,6 +54,8 @@ namespace ManagementOfExams.Data
         //public Guid SubjectId { get; private set; }
 
         public Subject Subject { get;  set; }
+
+        public IEnumerable<Exam> Exams { get; set; }
 
 
         public void SetId(Guid id)

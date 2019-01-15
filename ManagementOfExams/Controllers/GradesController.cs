@@ -48,7 +48,7 @@ namespace ManagementOfExams.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public Task<IActionResult> Create([Bind("Id,Value,Date")] GradeModel gradeModel)
+        public async Task<IActionResult> Create([Bind("Id,Value,Date")] GradeModel gradeModel)
         {
             if (ModelState.IsValid)
             {

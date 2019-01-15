@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using ManagementOfExams.Data;
 
 namespace ManagementOfExams.Models
 {
@@ -20,5 +21,7 @@ namespace ManagementOfExams.Models
         public string Password { get; set; }
 
         public string EmailAddress { get; set; }
+
+        public IEnumerable<Exam> Exams { get; set; }
     }
 }

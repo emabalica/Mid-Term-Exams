@@ -25,10 +25,7 @@ namespace ManagementOfExams.Controllers
         {
             return View(await _context.GetAll<Teacher>());
         }
-        public IActionResult Profile()
-        {
-            return View();
-        }
+        
 
         // GET: Teachers/Details/5
         public async Task<IActionResult> Details(Guid id)
@@ -78,7 +75,6 @@ namespace ManagementOfExams.Controllers
         // GET: Teachers/Edit/5
         public async Task<IActionResult> Edit(Guid id)
         {
-
             var teacher = await _context.GetById<Teacher>(id);
             if (teacher == null)
             {
@@ -87,6 +83,25 @@ namespace ManagementOfExams.Controllers
             return View(teacher);
         }
 
+        //GET: Teachers/Profile/5
+        
+        public async Task<IActionResult> Profile(Guid id)
+        {
+            var teacher = await _context.GetById<Teacher>(id);
+            
+            if (teacher == null)
+            {
+                return NotFound();
+            }
+
+            return View(teacher);
+        }
+
+        public async Task CreateExam()
+        {
+            new ExamsController(_context).Create();
+        }
+        
         // POST: Teachers/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.

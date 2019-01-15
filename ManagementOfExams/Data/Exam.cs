@@ -49,7 +49,7 @@ namespace ManagementOfExams.Data
         //[ForeignKey("Student")]
         //public Guid StudentId { get; private set; }
 
-        public Student Student { get; private set; }
+        public Student Student { get; set; }
 
     }
 }
